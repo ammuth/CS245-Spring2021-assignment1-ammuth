@@ -1,0 +1,51 @@
+Time Analysis
+
+Selection Sort:
+	Runnning time simplified is O(n^2) because we have a for loop inside a for loop; there are other lines of code declaring variables and such but this would only add a constant to the run time--which is droppped for Big O.
+
+Bubble Sort:
+	Running time simplified is O(n^2) because we have a for loop inside a for loop; there are other lines of code declaring variables and such but this would only add a constant to the run time--which is droppped for Big O.
+
+Insertion Sort:
+	Running time simplified is O(n^2) because we have a while loop inside a for loop; there are other lines of code declaring variables and such but this would only add a constant to the run time--which is droppped for Big O.
+
+Merge Sort:
+	Running time simplified is O(nlogn) because we are doing recursion and each time we are doing it we are splitting the array up n times, therefore we ask how many times can we split an array n times? This becomes O(nlogn).
+
+Quick Sort:
+	Running time simplified is O(nlogn) because when we call partition we are splitting the array up n times, so we ask how many times can we split an array of size n...n times; there are other lines of code declaring variables and such but this would only add a constant to the run time--which is droppped for Big O. (Best case would be O(nlogn)).
+
+Randomized Quick Sort:
+	Running time simplified is O(nlogn)--it's the same as the normal quick sort because the only thing we're adding is some lines to pick a random index between 0 and arr.length-1. Therefore we are only adding constant lines of code that will eventually get dropped when simplifying so so we still have O(nlogn).
+
+Quadratic Sort:
+	I chose to do selection sort for my quadratic sort (just with two more arguements for the method) so the overall structure didn't change--we still have a for loop in a for loop so our running time is O(n^2).
+
+Hybrid Sort:
+	In this sort, we are looking at the worst case. We have two cases here: either we have an array of a size such that we need to call randomized quick sort, or we have one where we need to call quadratic sort. Each of those run times are above (O(nlogn) or O(n^2)). Of the two, the one with the worst run time is the quadratic so we would say that Hybrid sort has run timee of O(n^2).
+
+Space Analysis
+
+Selection Sort:
+	Space is O(1) or constant because in we only have one temporary variable. 
+
+Bubble Sort:
+	Space is O(1) or constant because there's only one temporary variable.
+
+Insertion Sort:
+	Space is O(2) = O(1) or constant because there's only 2 temporary variables.
+
+Merge Sort:
+	Space is O(1) or constant because there's only one temporary variable.
+
+Quick Sort:
+	Space is (nlogn) because this is recursive and every time we call quick sort recursively, we create a variable which is the result of calling the partition function. This is essentially splitting the array into two sections continuously so how many times can we divide this array? Therefore, we have nlogn.
+
+Randomized Quick Sort:
+	In our randomized quick sort, we have the same space needed as for normal quick sort--which is O(nlogn). The only part we are adding is the randomized part where we're choosing a random index to be our pivot--this doesn't affect the variable declared of calling partition, so it's the same-- O(nlogn).
+
+Quadratic Sort:
+	For the quadratic sort, I chose to use selection sort and hen add the int left and int right arguments. Because we are using selection sort, the space we need will be the same as the regular selection sort--thus we have O(1) or constant. 
+
+Hybrid Sort: 
+	Now that we know the space required for randomized quick sort and quadratic sort, we can just add the two of those O()s together to get the space required for hybird--because the point of hybrid is to either use randomized quick sort or quadratic sort depending on the size of the array we are give. Thus, we have O(nlogn + 1) = O(nlogn). So our space for ybrid sort is O(nlogn).
